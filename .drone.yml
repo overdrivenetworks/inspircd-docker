@@ -6,7 +6,7 @@ steps:
 - name: "set image tags"
   image: busybox
   environment:
-    IRCD_VERSION: "3.4.0"
+    IRCD_VERSION: "3.5.0"
   commands: ["echo \"$IRCD_VERSION,$IRCD_VERSION-$(date +%Y%m%d),latest\" > .tags"]
 
 - name: "build docker"
@@ -19,7 +19,7 @@ steps:
     password:
       from_secret: docker_password
     build_args:
-      - IRCD_VERSION=3.4.0
+      - IRCD_VERSION=3.5.0
       - "EXTRASMODULES=m_blockhighlight m_xlinetools m_join0 m_opmoderated m_fakelist"
       - "CONFIGUREARGS=--enable-extras=m_sslrehashsignal.cpp --enable-extras=m_geo_maxmind.cpp"
       - BUILD_DEPENDENCIES=libmaxminddb-dev
