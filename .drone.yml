@@ -12,8 +12,7 @@ steps:
 - name: "build docker"
   image: plugins/docker
   settings:
-    repo: cr.overdrivenetworks.com/inspircd-overdrive
-    registry: cr.overdrivenetworks.com
+    repo: ovdnet/inspircd
     username:
       from_secret: docker_user
     password:
