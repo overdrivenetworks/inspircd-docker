@@ -25,10 +25,6 @@ RUN git checkout $(git describe --abbrev=0 --tags $VERSION)
 
 ## Add modules
 RUN { [ $(ls /src/modules/ | wc -l) -gt 0 ] && cp -r /src/modules/* /inspircd-src/src/modules/ || echo "No modules overwritten/added by repository"; }
-
-# 2020-05-16: Add WIP in-house modules
-RUN wget https://raw.githubusercontent.com/overdrivenetworks/inspircd-contrib/relaymsg/3.0/m_relaymsg.cpp -P /inspircd-src/src/modules/
-
 RUN echo $EXTRASMODULES | xargs --no-run-if-empty ./modulemanager install
 
 RUN ./configure --prefix /inspircd --uid 10000 --gid 10000
