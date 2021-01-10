@@ -4,7 +4,7 @@
 
 This repository contains custom builds of InspIRCd for overdrive-irc. It is mostly the same as the [upstream image](https://github.com/inspircd/inspircd-docker), with some extra and contrib modules enabled by default.
 
-As of 2020-02-23, these include:
+As of 2021-01-09, these include:
 
 ## Core extras
 - m_sslrehashsignal.cpp
@@ -12,10 +12,11 @@ As of 2020-02-23, these include:
 
 ## Contrib modules
 - m_blockhighlight
-- m_xlinetools
+- m_fakelist
 - m_join0
 - m_opmoderated
-- m_fakelist
+- m_relaymsg
+- m_xlinetools
 
 ## Deployment Notes
 

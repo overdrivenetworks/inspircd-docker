@@ -22,7 +22,7 @@ steps:
       from_secret: docker_password
     build_args:
       - IRCD_VERSION=3.8.1
-      - "EXTRASMODULES=m_blockhighlight m_xlinetools m_join0 m_opmoderated m_fakelist"
+      - "EXTRASMODULES=m_blockhighlight m_fakelist m_join0 m_opmoderated m_relaymsg m_xlinetools "
       - "CONFIGUREARGS=--enable-extras=m_sslrehashsignal.cpp --enable-extras=m_geo_maxmind.cpp"
       - BUILD_DEPENDENCIES=libmaxminddb-dev
       - RUN_DEPENDENCIES=libmaxminddb
