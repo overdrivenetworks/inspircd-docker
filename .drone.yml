@@ -29,3 +29,7 @@ steps:
   trigger:
     branch:
     - master
+
+node:
+  # These tags are specific to the drone.overdrivenetworks.com instance
+  highcpu: "true"
