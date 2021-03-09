@@ -13,7 +13,8 @@ steps:
      bash -c 'echo "$IRCD_VERSION,$IRCD_VERSION-$(date +%Y%m%d),$(cut -d . -f 1 <<< $IRCD_VERSION),$(cut -d . -f 1,2 <<< $IRCD_VERSION),latest" > .tags'
 
 - name: "build docker"
-  image: plugins/docker
+  # Custom build with Docker 20.10.5 + support for rootless dind
+  image: jlu5/drone-docker
   settings:
     repo: ovdnet/inspircd
     username:
