@@ -6,7 +6,7 @@ steps:
 - name: "set image tags"
   image: bash
   environment:
-    IRCD_VERSION: "3.8.1"
+    IRCD_VERSION: "3.9.0"
   # Build the following tags: maj.min.patch, maj.min.patch-YYMMDD, maj, maj.min, latest
   commands:
     - >
@@ -21,7 +21,7 @@ steps:
     password:
       from_secret: docker_password
     build_args:
-      - IRCD_VERSION=3.8.1
+      - IRCD_VERSION=3.9.0
       - "EXTRASMODULES=m_blockhighlight m_fakelist m_join0 m_opmoderated m_relaymsg m_xlinetools "
       - "CONFIGUREARGS=--enable-extras=m_sslrehashsignal.cpp --enable-extras=m_geo_maxmind.cpp"
       - BUILD_DEPENDENCIES=libmaxminddb-dev
@@ -32,4 +32,5 @@ steps:
 
 node:
   # These tags are specific to the drone.overdrivenetworks.com instance
+  # Route these builds to machines with more powerful CPUs (otherwise it takes like 15 minutes to finish..)
   highcpu: "true"
